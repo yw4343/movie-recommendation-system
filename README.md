@@ -4,8 +4,6 @@ This project builds a **personalized movie recommendation system** using **Neura
 
 > Course Project — *Advanced Marketing Analytics, Columbia Business School*
 
----
-
 ## Project Overview
 
 **Research Question:**  
@@ -13,8 +11,6 @@ How can we leverage structured and unstructured data to predict individual movie
 
 **Objective:**  
 Develop a recommendation model that learns user preferences based on similarities between users and between movie items, and produces accurate top-N movie recommendations.
-
----
 
 ## Dataset Description
 
@@ -35,8 +31,6 @@ Contains descriptive information about movies.
 - `avgRating`
 - `imdbId`
 
----
-
 ## Data Cleaning & Exploration
 
 Key preprocessing steps:
@@ -45,21 +39,9 @@ Key preprocessing steps:
 3. Performed descriptive statistics
 4. Visualized rating distributions to understand user behavior
 
----
+## Model: Neural Collaborative Filtering (NCF)
 
-## Modeling Approaches Explored
-
-| Approach | Description | Limitation |
-|--------|-------------|------------|
-| **SVD** | Matrix factorization for rating prediction | Not scalable for large datasets |
-| **ALS** | Efficient factorization using implicit feedback | User ID mapping issues |
-| **NCF (Final)** | Deep learning–based collaborative filtering | Requires tuning & more data |
-
----
-
-## Neural Collaborative Filtering (NCF)
-
-The final model uses **Neural Collaborative Filtering**, which combines matrix factorization with deep neural networks.
+The model selected is **Neural Collaborative Filtering**, which combines matrix factorization with deep neural networks.
 
 ### Model Architecture
 - User and item IDs are encoded and embedded into dense vectors
@@ -74,8 +56,6 @@ The final model uses **Neural Collaborative Filtering**, which combines matrix f
 - Users: **247,383**
 - Movies: **67,873**
 
----
-
 ## Model Evaluation
 
 **Metric Used:** Root Mean Squared Error (RMSE)
@@ -83,8 +63,6 @@ The final model uses **Neural Collaborative Filtering**, which combines matrix f
 - **RMSE = 0.818**
 - Predictions are, on average, off by ±0.82 rating points (on a 1–5 scale)
 - Indicates reasonable predictive performance for a large-scale recommendation task
-
----
 
 ## Recommendation Functionality
 
@@ -106,23 +84,17 @@ user_id, df_meta, N (default = 5)
 **Edge Case Handling**
 - If the user does not exist → returns `"User not found"`
 
----
-
 ## Limitations
 
 - Cold start problem for new users or items
 - Potential over-generalization due to sparse interactions
 - Limited hyperparameter tuning
 
----
-
 ## Future Improvements
 
 - Increase embedding dimensions and model depth
 - Build a hybrid recommender (collaborative + content-based)
 - Add MAE and Precision@K as evaluation metrics
-
----
 
 ## Tech Stack
 
@@ -131,8 +103,6 @@ user_id, df_meta, N (default = 5)
 - Pandas, NumPy
 - Scikit-learn
 - Matplotlib
-
----
 
 ## Repository Structure
 
